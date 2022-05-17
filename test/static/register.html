@@ -1,0 +1,71 @@
+{% extends login_index.html %}
+
+{% block hTitle %}
+<title>天天果园-会员注册</title>
+{% end block %}
+
+{% block cssStyle %}
+<style >
+	#d3{
+	margin-top:20px;
+}
+</style>
+{% end block %}
+
+{%block pageTop %}
+会员注册
+{% end block %}
+
+{% block imgTopTag %}
+<a href="/login" id="regista">会员登陆&gt</a>
+{% end block %}
+
+{% block logintab%}
+	<form action="/register" method="post" >
+		{%notes%}
+		{% csrf_token %}
+		{%notes%}
+				<table>
+					<tr>
+						<td class='col0'>手机号</td>
+						<td colspan="2">
+							<input type="text" id="uphone" class='inputStyle' name='uphone'>
+						</td>
+					</tr>
+					<tr>
+						<td class='col0'>邮箱</td>
+						<td colspan="2">
+							<input type="text" id="uemail" class='inputStyle' name='uemail'>
+						</td>
+					</tr>
+					<tr>
+						<td class='col0'>密码</td>
+						<td colspan="2">
+							<input id="upwd" type="password" placeholder="请输入6-20位号码字符" class='inputStyle' name='upwd'>
+						</td>
+					</tr>
+					<tr>
+						<td class='col0'>确认密码</td>
+						<td colspan="2">
+							<input id="deterupwd" type="password" placeholder="请输入6-20位号码字符" class='inputStyle' name='deterupwd'>
+						</td>
+					</tr>
+					<tr>
+						<td></td>
+						<td><input name="isSaved" id="isSaved" type="checkbox" value="1">记住密码</td>
+						<td align="center">
+							<a href="#" target="_blank" class="rightdown">忘记密码?</a>
+							<a href="#" target="_self" class="rightdown">快捷登录</a>
+					</tr>
+					<tr>
+						<td></td>
+						<td><button id="login" type="submit" class="down">注册</button></td>
+						<td>
+						<div id="aregist">
+							<a href="/login" style="text-decoration:none;">登录</a>
+						</div></td>
+					</tr>
+
+				</table>
+	</form>
+{% end block %}

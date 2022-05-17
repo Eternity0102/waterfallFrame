@@ -1,0 +1,88 @@
+{% extends login_index.html %}
+
+{% block hTitle %}
+<title>天天果园-会员注册</title>
+{% end block %}
+
+{% block cssStyle %}
+<style >
+	#d3{
+	margin-top:15px;
+	}
+	*{
+		border:0px;
+		margin:0px;
+		padding:0px;
+	}
+</style>
+{% end block %}
+
+{%block pageTop %}
+会员注册
+{% end block %}
+
+{% block imgTopTag %}
+<a href="/login" id="regista">会员登陆&gt</a>
+{% end block %}
+
+{% block logintab%}
+	<form action="/register" method="post" >
+		{%notes%}
+		{% csrf_token %}
+		{%notes%}
+				<table>
+					<tr>
+						<td class='col0'>昵称</td>
+						<td colspan="2">
+							<input type="text" id="nickname" class='inputStyle' name='nickname'>
+						</td>
+					</tr>
+					<tr>
+						<td class='col0'>手机号</td>
+						<td colspan="2">
+							<input type="text" id="phone" class='inputStyle' name='phone'>
+						</td>
+					</tr>
+					<tr>
+						<td class='col0'>邮箱</td>
+						<td colspan="2">
+							<input type="text" id="email" class='inputStyle' name='email'>
+						</td>
+					</tr>
+					<tr>
+						<td class='col0'>密码</td>
+						<td colspan="2">
+							<input id="password" type="password" placeholder="请输入6-20位号码字符" class='inputStyle' name='password'>
+						</td>
+					</tr>
+					<tr>
+						<td class='col0'>确认密码</td>
+						<td colspan="2">
+							<input id="deterpwd" type="password" placeholder="请输入6-20位号码字符" class='inputStyle' name='deterpwd'>
+						</td>
+					</tr>
+					<tr>
+						<td></td>
+							<td><button id="login" type="submit" class="down">注册</button></td>
+						<td>
+						<div id="aregist">
+							<a href="/login" style="text-decoration:none;">登录</a>
+						</div></td>
+					</tr>
+
+				</table>
+	</form>
+	<script>
+		{% if phoneExists%}
+		alert('手机号已被注册')
+		{% elif nicknameExists%}
+		alert('昵称已存在')
+		{% end if %}
+	</script>
+{% end block %}
+	{%notes%}
+	为了防止加载register父模板tip中的内容，必须继承为空
+	{%notes%}
+	{% block tip %}
+	{% end block %}
+

@@ -1,0 +1,3 @@
+from waterfall.defaultTemplate import DEFAULTTEMPLATE
+SERVERERROR = DEFAULTTEMPLATE + '500.html'
+NOTFOUNDERROR = DEFAULTTEMPLATE + '404.html'

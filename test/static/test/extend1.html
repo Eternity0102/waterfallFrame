@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <table style="border=1px">
+        <tr>
+            <td>啥也没有</td>
+            <td>啥也没有1</td>
+        </tr>
+        {% block aaa %}
+        <tr>
+            <td>啥也没有</td>
+            <td>啥也没有1</td>
+        </tr>
+        {% end block %}
+        <tr>
+            <td>啥也没有</td>
+            <td>啥也没有1</td>
+        </tr>
+        {% block bbb %}
+        <tr>
+            <td>啥也没有</td>
+            <td>啥也没有1</td>
+        </tr>
+        {% end block %}
+    </table>
+
+</body>
+</html>

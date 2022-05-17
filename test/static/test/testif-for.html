@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    {% if age == '77' %}
+        <p>输出不了if age={{age}}</p>
+    {% elif age == '89'%}
+        <p>输出不了 age={{age}}</p>
+    {% elif age == '88'%}
+        <p>可以输出 age={{age}} </p>
+    {% else %}
+        <p>输出不了 age={{age}} </p>
+    {% end if %}
+    <p><a href="#">我不在标签内</a></p>
+    {% if name == 'cc' %}
+        {%for i in lst%}
+            <p>输出{{i}}:{{lst[i]}}</p>
+            {%for i in range(2)%}
+                第{{i}}个for,里面还有3for<br>
+                {%for j in range(3)%}
+                    --->第{{i}}:{{j}}个for<br>
+                {% end for %}
+            {% end for %}
+            {% if {{i}} == 'a'%}
+                <p>输出if {{i}}:{{lst[i]}}确实是a1</p>
+            {% elif {{i}} == 'b'%}
+                <p>输出elif {{i}}:{{lst[i]}}确实是b</p>
+            {% elif {{lst[i]}} == 'b2'%}
+                <p>输出elif {{i}}:{{lst[i]}}确实是b2</p>
+            {% else %}
+                <p>输出else {{i}}:{{lst[i]}}</p>
+            {%end if%}
+        {% end for %}
+        <p>第i层if,当前name={{name}},内层if结束</p>
+    {% end if %}
+
+</body>
+</html>

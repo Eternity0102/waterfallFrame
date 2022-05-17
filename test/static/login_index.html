@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+	<meta charset="UTF-8">
+	{%   block hTitle    %}
+	<title>天天果园-会员登陆</title>
+	{% end block %}
+	<link rel="stylesheet" type="text/css" href="css/login_index.css">
+	{% block cssStyle %}
+	{% end block %}
+	<script src="js/jquery-1.11.3.js"></script>
+	<script src='js/login.js'></script>
+ </head>
+ <body style="text-align: center;">
+
+ 		<div id='d0' class="flex">
+ 		{%block pageTop %}
+ 		会员登录
+ 		{% end block %}
+ 		</div>
+		<hr>
+		<div class="flex">
+		<div id="d1">
+			<img src="./images/a.jpg" >
+			<div id="registdiv">
+				{% block imgTopTag %}
+				<a href="/register" id="regista">会员注册&gt</a>
+				{% end block %}
+			</div>
+		</div>
+	 <div id="d3"  class="flex">
+	 	{% block logintab %}
+			<form id='frmLogin' action="/login" method="post">
+				{%notes%}
+				{% csrf_token %}
+				{%notes%}
+				<table>
+					<tr>
+						<td class='col0'>手机号</td>
+						<td colspan="2">
+							<input type="text" id="uphone" class='inputStyle' name='uphone'>
+						</td>
+					</tr>
+					<tr>
+						<td class='col0'>密码</td>
+						<td colspan="2">
+							<input id="upwd" type="password" placeholder="请输入6-20位号码字符" class='inputStyle' name='upwd'>
+						</td>
+					</tr>
+					<tr>
+						<td></td>
+						<td><input name="isSaved" id="isSaved" type="checkbox" value="1">记住密码</td>
+						<td align="center">
+							<a href="#" target="_blank" class="rightdown">忘记密码?</a>
+							<a href="#" target="_self" class="rightdown">快捷登录</a>
+					</tr>
+					<tr>
+						<td></td>
+						<td><button id="login" type="submit" class="down">登录</button></td>
+						<td>
+						<div id="aregist">
+							<a href="/register" style="text-decoration:none;">注册会员</a>
+						</div></td>
+					</tr>
+
+				</table>
+			</form>
+		{% end block %}	
+	</div>
+</div>
+	{% block tip %}
+	{% end block %}	
+ </body>
+</html>

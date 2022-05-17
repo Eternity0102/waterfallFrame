@@ -1,0 +1,37 @@
+{% notes %}
+{%extends  a.html %}
+{% notes %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Test</title>
+</head>
+<body>
+    <ol>
+        <li>h</li>
+        <li>{{age}}</li>
+        <li>e</li>
+        <li>l</li>
+        <li>l</li>
+        <li>{{name}}</li>
+        <li>{{ age }}</li>
+        {% notes %}
+        注释内容1
+        {% notes %}
+        不被注释内容0 <br>
+        {{age}}
+        {% notes %}
+        注释内容
+        {% notes %}
+        不被注释内容1 <br>
+        {{name}}
+        {% notes %}
+        注释内容2
+        {% notes %} <br>
+        不被注释内容2
+        <li>{{ name }}</li>
+    </ol>
+</body>
+<script src="js/test.js"></script>
+</html>
